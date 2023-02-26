@@ -21,15 +21,19 @@ int Function::CR_InputBox(char* Input, int Limit, int x, int y, int Lsize, int H
 	FlushMouseMsgBuffer();
 	while (true)
 	{
-		//if (MouseHit())//如果鼠标被按下，则退出输入
-		//{
-		//	//m = GetMouseMsg();
-		//	//if (m.mkLButton || m.mkRButton)
-		//	//{
-		//		strcpy(Input, InputBuf);
-		//		return Length;
-		//	//}
-		//}
+		/*
+		MOUSEMSG m;
+		if (MouseHit())//如果鼠标被按下，则退出输入
+		{
+			m = GetMouseMsg();
+			if (m.mkLButton || m.mkRButton)
+			{
+				strcpy_s(Input, sizeof(Input), InputBuf);
+				//strcpy(Input, InputBuf);
+				return Length;
+			}
+		}
+		*/
 		c = _getch();
 		if (c != 13)//如果输入的不是回车
 		{
@@ -67,7 +71,9 @@ int Function::CR_InputBox(char* Input, int Limit, int x, int y, int Lsize, int H
 		}
 		else
 		{
-			strcpy(Input, InputBuf);
+			strcpy_s(Input, sizeof(Input), InputBuf);
+
+			//strcpy(Input, InputBuf);
 			return Length;
 		}
 	}
@@ -147,7 +153,9 @@ int Function::CHR_InputBox(char* Input, int Limit, int x, int y, int Lsize, int 
 		}
 		else
 		{
-			strcpy(Input, InputBuf);
+			strcpy_s(Input, sizeof(Input), InputBuf);
+
+			//strcpy(Input, InputBuf);
 			return Length;
 		}
 	}

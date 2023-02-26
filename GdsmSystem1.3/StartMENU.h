@@ -2,9 +2,11 @@
 #ifndef StartMENU_H
 #define StartMENU_H
 #include <easyx.h>
+#include<graphics.h>
 #include"Struct.h"
 #include"Struct.h"
 #include "Function.h"
+#include <windows.h>
 
 class StartMENU
 {
